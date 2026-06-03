@@ -9,7 +9,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ nodejs pnpm ];
+        buildInputs = with pkgs; [ nodejs pnpm ] ++ [ pkgs."poppler-utils" ];
       };
     };
 }
