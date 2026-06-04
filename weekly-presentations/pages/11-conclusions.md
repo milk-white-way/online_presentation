@@ -10,9 +10,9 @@ layout: default
 
 - **Accuracy validated** against the Taylor–Green vortex exact solution and Ghia et al. lid-driven cavity benchmarks across $Re = 100$ to $3200$, with results in excellent agreement.
 
-- **Demonstrated exascale scalability**: near-ideal strong scaling (×2,060 on 2,048 CPUs) and efficient weak scaling (32 → 16,384 CPUs, +12% overhead) on ALCF Aurora; comparable weak scaling validated on NERSC Perlmutter.
+- **Demonstrated exascale scalability**: near-ideal strong scaling (×2,060 on 2,048 CPUs) and efficient weak scaling (32 → 16,384 CPUs, +12% overhead) on ALCF Aurora; comparable weak scaling validated on NERSC Perlmutter. Computational speed is accelerated 20-30 times on multi-GPU architecture.
 
-- **Production-scale 3D simulation** at $Re = 30{,}000$ on a $1024^3$ grid with 16,384 MPI ranks achieves $\sim\!1.9\,\text{s/step}$ on ND-Lighthouse, confirming readiness for exa-scale incompressible flow simulations.
+- **Production-scale 3D simulation** at $Re = 30{,}000$ on a $1024^3$ grid with 16,384 MPI ranks achieves $\sim\!1.9\,\text{s/step}$ on Aurora, confirming readiness for exa-scale incompressible flow simulations.
 
 </v-clicks>
 
