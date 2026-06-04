@@ -6,44 +6,32 @@ layout: two-cols
 
 **Analytical solution** (2D, periodic domain):
 
-$$u(x, y, t) = -\cos(x)\sin(y)\,e^{-2\nu t}$$
+$$u = -\cos(x)\sin(y)\,e^{-2\nu t}$$
 
-$$v(x, y, t) = \sin(x)\cos(y)\,e^{-2\nu t}$$
+$$v = \;\;\sin(x)\cos(y)\,e^{-2\nu t}$$
 
-$$p(x, y, t) = -\frac{1}{4}\left[\cos(2x) + \cos(2y)\right]e^{-4\nu t}$$
+$$p = -\tfrac{1}{4}\left[\cos(2x) + \cos(2y)\right]e^{-4\nu t}$$
 
 **Parameters:**
-- Domain: $[0, 2\pi] \times [0, 2\pi]$, periodic BC
-- Grid: $16 \times 16$ → $128 \times 128$
-- $\Delta t = 2 \times 10^{-6}$, total steps: 100
+- Domain: $[0, 2\pi]^2$, periodic BC
+- Grid: $128 \times 128$
+- $t = 0.1\,\text{s}$, $\;\Delta t = 2 \times 10^{-6}$
 
 ::right::
 
 <div class="flex items-center justify-center h-full">
-  <!-- replace with actual velocity field plot -->
-  <img :src="'/assets/backgrounds/bg1.jpg'" class="rounded-lg opacity-70 max-h-64 object-cover" alt="Velocity field placeholder" />
+  <img :src="'/assets/images/tgv2d.png'" class="rounded" style="max-height:440px; max-width:100%; object-fit:contain" alt="TGV velocity field 128×128" />
 </div>
 
 ---
-layout: image-right
-image: /assets/backgrounds/bg2.jpg
+layout: default
 ---
 
-# Taylor–Green Vortex: Results
+# Taylor–Green Vortex: 3D Simulation
 
-<!-- replace /assets/backgrounds/bg2.jpg with actual velocity contour plots -->
-
-**Grid:** $16 \times 16$
-
-- Non-dimensional time step: $\Delta t = 2 \times 10^{-6}$
-- Total steps: 100
-- Solver matches analytical solution with high accuracy
-
-<v-click>
-
-**Grid:** $128 \times 128$
-
-- Simulation time: $t = 0.1\,\text{s}$
-- $L^2$ error converges at expected second-order rate
-
-</v-click>
+<div class="flex flex-col items-center justify-center h-4/5 gap-4 opacity-50">
+  <div class="border-2 border-dashed border-current rounded-xl px-16 py-10 text-center">
+    <p class="text-xl font-semibold mb-2">3D velocity iso-contours animation</p>
+    <p class="text-sm"> coming soon</p>
+  </div>
+</div>

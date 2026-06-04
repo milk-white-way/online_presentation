@@ -4,20 +4,19 @@ background: /assets/backgrounds/bg1.jpg
 colorSchema: dark
 ---
 
-<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
+<div class="absolute inset-0" style="background-color:#0F3D24"></div>
 
-<div class="relative h-full flex flex-col px-16 py-10">
+<div class="relative h-full flex flex-col px-16 py-10 text-white">
 
   <div class="text-xs tracking-widest uppercase opacity-50 self-end">
-    Public Presenation 2026
+    General Presentation - 2026
   </div>
 
   <div class="flex-1 flex flex-col justify-center">
     <div class="w-14 h-1 bg-primary mb-8"></div>
-    <h1 class="text-4xl font-bold leading-snug mb-10">
-      Developing an AMReX-Based Application<br>
-      for Exa-Scale Simulation<br>
-      of Incompressible Flows
+    <h1 class="text-4xl font-bold leading-snug mb-10" style="color:#F5A800">
+      Introducing OvrFlw: <br>
+      an AMReX-Based Solver for Exa-Scale Simulation of Incompressible Flows
     </h1>
     <div class="space-y-3 text-base">
       <div>

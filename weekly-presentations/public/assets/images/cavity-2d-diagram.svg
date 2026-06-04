@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 290" width="290" height="290">
+  <style>
+    .box-border  { stroke: rgba(200,200,200,0.75); }
+    .label       { fill: rgba(200,200,200,0.70); }
+    .inner-label { fill: rgba(200,200,200,0.28); }
+    @media (prefers-color-scheme: light) {
+      .box-border  { stroke: rgba(0,0,0,0.65); }
+      .label       { fill: rgba(0,0,0,0.55); }
+      .inner-label { fill: rgba(0,0,0,0.25); }
+    }
+  </style>
+
+  <!-- Box -->
+  <rect x="55" y="55" width="180" height="180" fill="none" class="box-border" stroke-width="2"/>
+  <!-- Moving lid highlight -->
+  <line x1="55" y1="55" x2="235" y2="55" stroke="#4EC5D4" stroke-width="3"/>
+
+  <!-- U = 1 → -->
+  <text x="145" y="42" text-anchor="middle" font-size="11" font-family="sans-serif"
+        fill="#4EC5D4" font-weight="600">U = 1 →</text>
+
+  <!-- L = 1 inside -->
+  <text x="145" y="151" text-anchor="middle" font-size="15" font-family="sans-serif"
+        class="inner-label">L = 1</text>
+
+  <!-- No-slip left (vertical) -->
+  <text x="33" y="145" text-anchor="middle" font-size="11" font-family="sans-serif"
+        class="label" transform="rotate(-90 33 145)">No-slip</text>
+
+  <!-- No-slip right (vertical) -->
+  <text x="257" y="145" text-anchor="middle" font-size="11" font-family="sans-serif"
+        class="label" transform="rotate(90 257 145)">No-slip</text>
+
+  <!-- No-slip bottom -->
+  <text x="145" y="254" text-anchor="middle" font-size="11" font-family="sans-serif"
+        class="label">No-slip</text>
+
+  <!-- 2D label -->
+  <text x="145" y="275" text-anchor="middle" font-size="10" font-family="sans-serif"
+        class="label" opacity="0.5">2D</text>
+</svg>

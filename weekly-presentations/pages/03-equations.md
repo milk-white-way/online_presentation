@@ -4,28 +4,26 @@ layout: default
 
 # Governing Equations
 
-The **incompressible Navier–Stokes equations** form the basis of the solver:
+Incompressible Navier-Stokes in dimensionless form:
 
-$$\nabla \cdot \mathbf{u} = 0$$
+$$
+\begin{align*}
+  \frac{\partial \mathbf{V}}{\partial t} + \text{C}(\mathbf{V}) &+ \nabla p - \text{Re}^{-1} \nabla^2 \mathbf{V} = 0 \\[2pt]
+  \nabla \cdot \mathbf{V} &= 0
+\end{align*}
+$$
 
-$$\rho \left( \frac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} \right) = -\nabla p + \mu \, \nabla^2 \mathbf{u}$$
+where $\text{C}(\mathbf{V}) = (\mathbf{V} \cdot \nabla)\mathbf{V}$ is the convective operator, $\text{Re} = UL/\nu$ is the Reynolds number.
 
-For large-scale applications, solving the coupled system demands excessive memory and poor iterative efficiency. Instead we use a **segregated (projection) method** — the **Incremental Pressure Correction Scheme (IPCS)** — splitting velocity and pressure into sequential solves.
+The set of equations is solved via **Fractional Step Method**. We employ the projection method that called Incremental Pressure Correction Scheme (IPCS) such that:
 
----
-layout: default
----
-
-# IPCS: Fractional Step Method
-
-**Step 1 — Tentative velocity** (ignore pressure increment)
-
-$$\rho \frac{\mathbf{u}^* - \mathbf{u}^n}{\Delta t} + \rho \left( \mathbf{u}^n \cdot \nabla \right) \mathbf{u}^n = -\nabla p^n + \mu \, \nabla^2 \mathbf{u}^*$$
-
-**Step 2 — Pressure correction** (enforce divergence-free constraint)
-
-$$\nabla^2 p^{n+1} = \nabla^2 p^n - \frac{\rho}{\Delta t} \nabla \cdot \mathbf{u}^*$$
-
-**Step 3 — Velocity correction**
-
-$$\mathbf{u}^{n+1} = \mathbf{u}^* - \frac{\Delta t}{\rho} \nabla \left( p^{n+1} - p^n \right)$$
+$$
+\begin{align*}
+  \text{I}   &: \frac{1}{2\Delta t}\left(3V^{*} - 4V^n + V^{n-1}\right) + \nabla p^n + \left[C_h - \text{Re}^{-1}\nabla_h^2\right]V^{*} \\[6pt]
+  \text{II}  &: \begin{cases}
+                  \dfrac{3}{2\Delta t}\left(\mathbf{V}^{n+1} - \mathbf{V}^{*}\right) = -\nabla\phi^{n+1} \\[4pt]
+                  \nabla \cdot \mathbf{V}^{n+1} = 0
+                \end{cases} \\[12pt]
+  \text{III} &: p^{n+1} = p^{k} + \phi^{n+1}
+\end{align*}
+$$

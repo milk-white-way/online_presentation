@@ -4,26 +4,25 @@ layout: default
 
 # Motivations
 
-<div class="grid grid-cols-3 gap-8 mt-10">
-  <div class="border border-primary/30 rounded-lg p-6 text-center bg-primary/5">
-    <div class="text-4xl mb-4">🩸</div>
-    <h3 class="font-bold text-lg mb-2">Blood Plasma Modeling</h3>
-    <p class="text-sm opacity-75">Simulate plasma flow behavior in complex vascular geometries</p>
-  </div>
-  <div class="border border-primary/30 rounded-lg p-6 text-center bg-primary/5">
-    <div class="text-4xl mb-4">🔬</div>
-    <h3 class="font-bold text-lg mb-2">Plasma–Cell Interaction</h3>
-    <p class="text-sm opacity-75">Model interactions between plasma flow and deformable cells</p>
-  </div>
-  <div class="border border-primary/30 rounded-lg p-6 text-center bg-primary/5">
-    <div class="text-4xl mb-4">🧫</div>
-    <h3 class="font-bold text-lg mb-2">Cell Modeling</h3>
-    <p class="text-sm opacity-75">Resolve cell-scale continuum mechanics at physiological conditions</p>
-  </div>
-</div>
+<p class="text-sm opacity-60 mt-1 mb-5">Biofluid &amp; biomechanics simulation at physiological scales presents four key challenges:</p>
 
-<div class="mt-10 text-center text-sm opacity-60">
-  Target: a flow solver capable of resolving these problems at exascale
+<div class="grid grid-cols-2 gap-4">
+  <div class="border border-primary/30 rounded-lg p-4 bg-primary/5">
+    <h3 class="font-bold text-base mb-2">1 · Mathematical Model Fidelity</h3>
+    <p class="text-sm opacity-75">Accurate representation of non-Newtonian blood rheology at micro scales, vascular wall elasticity, thrombus formation, and cellular deformation.</p>
+  </div>
+  <div class="border border-primary/30 rounded-lg p-4 bg-primary/5">
+    <h3 class="font-bold text-base mb-2">2 · Multi-scale Interface Coupling</h3>
+    <p class="text-sm opacity-75">Robust interface conditions bridging continuum and atomistic simulations. Mass conservation is paramount; momentum and energy conservation are advantageous yet challenging.</p>
+  </div>
+  <div class="border border-primary/30 rounded-lg p-4 bg-primary/5">
+    <h3 class="font-bold text-base mb-2">3 · Non-stationary Data Handling</h3>
+    <p class="text-sm opacity-75">Multi-scale simulations require effective averaging and filtering strategies to extract meaningful continuum-scale information from atomistic data.</p>
+  </div>
+  <div class="border border-primary/30 rounded-lg p-4 bg-primary/5">
+    <h3 class="font-bold text-base mb-2">4 · Extreme Computational Demand</h3>
+    <p class="text-sm opacity-75">Billions of DOF needed to resolve cell–endothelial interactions within 1 mm³. Local refinement essential for platelet aggregation and thrombus dynamics.</p>
+  </div>
 </div>
 
 ---
@@ -32,9 +31,19 @@ layout: default
 
 # Goal & Roadmap
 
-<div class="grid grid-cols-4 gap-3 mt-6 text-sm">
+<div class="text-sm opacity-75 mt-1 mb-4 grid grid-cols-2 gap-x-8 gap-y-1">
+  <div><span class="font-semibold">Solver:</span> Incompressible Navier-Stokes via fractional step (Kim &amp; Moin) on a hybrid staggered/non-staggered grid — contravariant velocities at face centers, Cartesian velocities &amp; pressure at cell centers.</div>
+  <div><span class="font-semibold">Numerics:</span> 4-stage RK4 pseudo-time-stepping for momentum; AMReX MLMG (default) or GMRES for the pressure Poisson equation; 2nd-order spatial accuracy.</div>
+  <div><span class="font-semibold">Parallelism:</span> MPI + OpenMP + optional CUDA; built on AMReX for block-structured mesh management and GPU portability.</div>
+  <div><span class="font-semibold">Validation:</span> Taylor-Green Vortex (exact analytical) and lid-driven cavity vs. Ghia et al. (1982); production 3D run at 1 billion grid resolution, Re = 30,000 on ALCF Aurora and NERCS Perlmutter.</div>
+</div>
+
+<div class="grid grid-cols-4 gap-3 text-sm">
   <div class="rounded-lg p-4 bg-blue-500/10 border border-blue-500/30">
-    <div class="font-bold text-blue-400 mb-2 text-base">Phase 1</div>
+    <div class="flex items-center justify-between mb-2">
+      <span class="font-bold text-blue-400 text-base">Phase 1</span>
+      <span class="text-xs font-semibold text-green-400 bg-green-400/10 rounded px-2 py-0.5">Done</span>
+    </div>
     <ul class="space-y-1 opacity-90">
       <li>2D Navier-Stokes for incompressible flow</li>
       <li>Fractional Step Method</li>
@@ -42,7 +51,10 @@ layout: default
     </ul>
   </div>
   <div class="rounded-lg p-4 bg-green-500/10 border border-green-500/30">
-    <div class="font-bold text-green-400 mb-2 text-base">Phase 2</div>
+    <div class="flex items-center justify-between mb-2">
+      <span class="font-bold text-green-400 text-base">Phase 2</span>
+      <span class="text-xs font-semibold text-green-400 bg-green-400/10 rounded px-2 py-0.5">Done</span>
+    </div>
     <ul class="space-y-1 opacity-90">
       <li>Accuracy tests with benchmarks</li>
       <li>Adaptive Mesh Refinement</li>
@@ -50,15 +62,21 @@ layout: default
     </ul>
   </div>
   <div class="rounded-lg p-4 bg-yellow-500/10 border border-yellow-500/30">
-    <div class="font-bold text-yellow-400 mb-2 text-base">Phase 3</div>
+    <div class="flex items-center justify-between mb-2">
+      <span class="font-bold text-yellow-400 text-base">Phase 3</span>
+      <span class="text-xs font-semibold text-yellow-400 bg-yellow-400/10 rounded px-2 py-0.5">Active</span>
+    </div>
     <ul class="space-y-1 opacity-90">
-      <li>HPC deployment (CCAST, etc.)</li>
+      <li>HPC deployment (CCAST, Aurora)</li>
       <li>3D capability</li>
       <li>Multi-GPU scaling tests</li>
     </ul>
   </div>
   <div class="rounded-lg p-4 bg-red-500/10 border border-red-500/30">
-    <div class="font-bold text-red-400 mb-2 text-base">Phase 4</div>
+    <div class="flex items-center justify-between mb-2">
+      <span class="font-bold text-red-400 text-base">Phase 4</span>
+      <span class="text-xs font-semibold text-slate-400 bg-slate-400/10 rounded px-2 py-0.5">Planned</span>
+    </div>
     <ul class="space-y-1 opacity-90">
       <li>Immersed Boundary Method</li>
       <li>Dissipative Particle Dynamics</li>
@@ -67,6 +85,6 @@ layout: default
   </div>
 </div>
 
-<div class="mt-6 text-center font-semibold text-primary">
+<div class="mt-5 text-center font-semibold text-primary">
   Flow Solver targeting Exascale Simulations
 </div>

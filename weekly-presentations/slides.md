@@ -30,6 +30,10 @@ src: ./pages/03-equations.md
 ---
 
 ---
+src: ./pages/03b-algorithm.md
+---
+
+---
 src: ./pages/04-grid.md
 ---
 
@@ -42,5 +46,17 @@ src: ./pages/06-test-cavity.md
 ---
 
 ---
-src: ./pages/07-conclusions.md
+src: ./pages/07-aurora-scaling.md
+---
+
+---
+src: ./pages/08-results-qcriterion.md
+---
+
+---
+src: ./pages/09-results-velocity.md
+---
+
+---
+src: ./pages/11-conclusions.md
 ---
