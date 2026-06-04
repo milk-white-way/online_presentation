@@ -31,5 +31,5 @@ layout: default
 </v-clicks>
 
 <div class="abs-br m-6 text-sm opacity-50">
-  Tam T. Nguyen · NDSU · APS DFD 2024
+  Thien-Tam Nguyen · tam.thien.nguyen@ndsu.edu
 </div>
