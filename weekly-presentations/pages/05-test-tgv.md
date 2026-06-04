@@ -24,14 +24,28 @@ $$p = -\tfrac{1}{4}\left[\cos(2x) + \cos(2y)\right]e^{-4\nu t}$$
 </div>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # Taylor–Green Vortex: 3D Simulation
 
-<div class="flex flex-col items-center justify-center h-4/5 gap-4 opacity-50">
-  <div class="border-2 border-dashed border-current rounded-xl px-16 py-10 text-center">
-    <p class="text-xl font-semibold mb-2">3D velocity iso-contours animation</p>
-    <p class="text-sm"> coming soon</p>
-  </div>
+**Domain:** $\Omega = [-\pi,\pi]^3$, periodic BC &nbsp;·&nbsp; $Re = 1600$
+
+Initial conditions at $t = 0$:
+
+$$u_x = \sin(x)\cos(y)\cos(z)$$
+
+$$u_y = -\cos(x)\sin(y)\cos(z)$$
+
+$$u_z = 0$$
+
+$$p = \tfrac{1}{16}\bigl[\cos(2x)+\cos(2y)\bigr]\bigl[\cos(2z)+2\bigr]$$
+
+The 3D TGV is the canonical benchmark for turbulence onset: the initially laminar vortex sheet undergoes vortex stretching and cascades energy to small scales.
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full gap-2">
+  <video :src="'/assets/media/isoView-velocityContours-3Dtgv.webm'" autoplay loop muted playsinline class="rounded" style="max-height:420px; max-width:100%; object-fit:contain"></video>
+  <div class="text-xs text-center opacity-60">Velocity iso-contours during vortex breakdown</div>
 </div>

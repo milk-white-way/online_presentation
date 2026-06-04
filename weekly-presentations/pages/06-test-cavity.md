@@ -80,3 +80,41 @@ layout: default
     <div class="text-xs opacity-70 text-left">All three corner vortices well-developed; top-left eddy emerges. Flow approaching transition to unsteadiness.</div>
   </div>
 </div>
+
+---
+layout: default
+---
+
+# 3D Lid-Driven Cavity: $\Gamma = 2$, $Re = 100$
+
+<div style="position:relative; width:min(100%,500px); margin:0.4rem auto 0; aspect-ratio:2292/1312;">
+  <img :src="'/assets/images/ratio2-1_ren100.png'" style="width:100%; height:100%; object-fit:fill;" alt="3D cavity Re=100 Gamma=2" />
+  <div style="position:absolute;left:13%;top:5%;transform:translate(-50%,-50%);background:#f97316;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">①</div>
+  <div style="position:absolute;left:37%;top:85%;transform:translate(-50%,-50%);background:#ef4444;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">②</div>
+  <div style="position:absolute;left:67%;top:57%;transform:translate(-50%,-50%);background:#16a34a;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">③</div>
+</div>
+<div class="text-xs text-center opacity-60 mt-1">Aspect ratio &Gamma; = 2 &nbsp;&bull;&nbsp; Re = 100 &nbsp;&bull;&nbsp; steady state (t = 10) &nbsp;&bull;&nbsp; vs. Cortes &amp; Miller and Albensoeder et al. (2005)</div>
+<ul class="text-xs mt-2" style="list-style:none; padding:0; line-height:1.65; display:flex; flex-direction:column; gap:0.2rem;">
+  <li><span v-mark="{at:0,type:'circle',color:'#f97316'}">① End-wall peak: <em>u</em>&thinsp;≈&thinsp;0.9 at <em>y</em>&thinsp;=&thinsp;&minus;1</span> ==> imprinted by the lateral no-slip boundary.</li>
+  <li><span v-mark="{at:0,type:'underline',color:'#ef4444'}">② Velocity dips to &asymp;&thinsp;&minus;0.2 near <em>y</em>&thinsp;=&thinsp;&minus;0.45</span>, then recovers to zero ==> hallmark of end-wall confinement in a finite-span cavity.</li>
+  <li><span v-mark="{at:0,type:'highlight',color:'rgba(34,197,94,0.35)'}">③ OvrFlw is in excellent agreement with both Cortes &amp; Miller and Albensoeder et al. (2005) across the full span.</span></li>
+</ul>
+
+---
+layout: default
+---
+
+# 3D Lid-Driven Cavity: $\Gamma = 2$, $Re = 1000$
+
+<div style="position:relative; width:min(100%,500px); margin:0.4rem auto 0; aspect-ratio:2292/1312;">
+  <img :src="'/assets/images/ratio2-1_ren1000.png'" style="width:100%; height:100%; object-fit:fill;" alt="3D cavity Re=1000 Gamma=2" />
+  <div style="position:absolute;left:14%;top:6%;transform:translate(-50%,-50%);background:#f97316;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">①</div>
+  <div style="position:absolute;left:38%;top:55%;transform:translate(-50%,-50%);background:#ef4444;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">②</div>
+  <div style="position:absolute;left:59%;top:87%;transform:translate(-50%,-50%);background:#0891b2;color:white;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55);z-index:2">③</div>
+</div>
+<div class="text-xs text-center opacity-60 mt-1">Aspect ratio &Gamma; = 2 &nbsp;&bull;&nbsp; Re = 1,000 &nbsp;&bull;&nbsp; t = 200 &nbsp;&bull;&nbsp; vs. Cortes &amp; Miller and Albensoeder et al. (2005)</div>
+<ul class="text-xs mt-2" style="list-style:none; padding:0; line-height:1.65; display:flex; flex-direction:column; gap:0.2rem;">
+  <li><span v-mark="{at:0,type:'box',color:'#f97316'}">① Near-wall peak: <em>u</em>&thinsp;≈&thinsp;0.88 at <em>y</em>&thinsp;=&thinsp;&minus;1</span> ==> end-wall imprint persists despite strong inertia.</li>
+  <li>② First zero-crossing near <em>y</em>&thinsp;≈&thinsp;&minus;0.5 ==> onset of inertia-driven spanwise variability as end-wall layers interact with the vortex core.</li>
+  <li><span v-mark="{at:0,type:'highlight',color:'rgba(8,145,178,0.3)'}">③ Pronounced minimum <em>u</em>&thinsp;≈&thinsp;&minus;0.3 near mid-span (<em>y</em>&thinsp;≈&thinsp;0)</span> ==> deepened return flow driven by the primary cavity vortex.</li>
+</ul>
