@@ -13,19 +13,15 @@ colorSchema: dark
   </div>
 
   <div class="flex-1 flex flex-col justify-center">
-    <div class="w-14 h-1 bg-primary mb-8"></div>
-    <h1 class="text-4xl font-bold leading-snug mb-10" style="color:#F5A800">
-      Introducing OvrFlw: <br>
-      an AMReX-Based Solver for Exa-Scale Simulation of Incompressible Flows
+    <div class="w-14 h-1 bg-primary mb-6"></div>
+    <div class="text-sm tracking-widest uppercase font-semibold mb-3" style="color:#F5A800; opacity:0.75">Part 2</div>
+    <h1 class="text-3xl font-bold leading-snug mb-7" style="color:#F5A800">
+      Modal analysis of blood flows in saccular aneurysms
     </h1>
-    <div class="space-y-3 text-base">
+    <div class="space-y-2 text-sm">
       <div>
         <p class="font-semibold">Thien-Tam Nguyen &amp; Dr. Trung B. Le</p>
-        <p class="text-sm opacity-60">Dept. of Civil, Construction &amp; Environmental Engineering · North Dakota State University</p>
-      </div>
-      <div>
-        <p class="font-semibold">Dr. Andy Nonaka</p>
-        <p class="text-sm opacity-60">Center for Computational Sciences and Engineering · Lawrence Berkeley National Laboratory</p>
+        <p class="text-xs opacity-60">Dept. of Civil, Construction &amp; Environmental Engineering · North Dakota State University</p>
       </div>
     </div>
   </div>
@@ -38,7 +34,6 @@ colorSchema: dark
          - For slides with variable backgrounds use dark:brightness-0 dark:invert instead
          Logos tile automatically — just add or remove items. -->
     <img :src="'/assets/logos/NDSU.png'" class="h-6 brightness-0 invert opacity-80" alt="NDSU" />
-    <img :src="'/assets/logos/LBNL.png'" class="h-8 brightness-0 invert opacity-80" alt="LBNL" />
     <img :src="'/assets/logos/NSFNSB.png'" class="h-12 brightness-0 invert opacity-80" alt="NSF" />
   </div>
 

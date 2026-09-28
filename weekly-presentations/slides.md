@@ -1,9 +1,9 @@
 ---
 theme: seriph
-title: "AMReX-Based Incompressible Flow Solver"
+title: "Introducing OvrFlw: an AMReX-Based Solver for Exa-Scale Simulation of Incompressible Flows"
 info: |
-  APS DFD 2024 — Tam T. Nguyen, NDSU
-  Developing an AMReX-Based Application for Exa-Scale Simulation of Incompressible Flows
+  General Presentation — 2026
+  Thien-Tam Nguyen & Dr. Trung B. Le (NDSU), Dr. Andy Nonaka (LBNL)
 transition: slide-left
 drawings:
   persist: false
@@ -14,7 +14,15 @@ drawings:
 </div>
 
 ---
-src: ./pages/00-title.md
+src: ./pages/00a-cv.md
+---
+
+---
+src: ./pages/00b-motivation.md
+---
+
+---
+src: ./pages/00c-part1-title.md
 ---
 
 ---
@@ -27,14 +35,6 @@ src: ./pages/02-amrex.md
 
 ---
 src: ./pages/03-equations.md
----
-
----
-src: ./pages/03b-algorithm.md
----
-
----
-src: ./pages/04-grid.md
 ---
 
 ---
@@ -54,9 +54,13 @@ src: ./pages/08-results-qcriterion.md
 ---
 
 ---
-src: ./pages/09-results-velocity.md
+src: ./pages/11-conclusions.md
 ---
 
 ---
-src: ./pages/11-conclusions.md
+src: ./pages/12-aneurysm-title.md
+---
+
+---
+src: ./pages/13-aneurysm.md
 ---

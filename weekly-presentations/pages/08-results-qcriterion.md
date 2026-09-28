@@ -1,27 +1,31 @@
 ---
-layout: two-cols
+layout: default
 ---
 
-# Production run on Aurora HPC Cluster
+# Production Run on Aurora
 
-A production setup for 3D Lid-Driven Cavity was performed on Aurora thanks to the allocations from ND-Lighthouse Project
+<p class="text-sm opacity-75 !mt-1 !mb-3">3D lid-driven cavity at scale, enabled by an allocation from the ND-Lighthouse project</p>
 
-System specfications:
-- Re = **30,000**
-- Grid: $1024^3$
-- Steps achieved: **80,000**
-- Total MPI ranks: **16,384**
-- Speed achieved (time per step): ~**1.9 s** / step
-- Node hours used: ~**2k**
+<div class="grid grid-cols-6 gap-2 text-center">
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">30,000</div><div class="text-xs opacity-60">Re</div></div>
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">1024³</div><div class="text-xs opacity-60">grid cells</div></div>
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">16,384</div><div class="text-xs opacity-60">MPI ranks</div></div>
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">80,000</div><div class="text-xs opacity-60">time steps</div></div>
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">~1.9 s</div><div class="text-xs opacity-60">per step</div></div>
+  <div class="rounded-lg py-2 border border-primary/30"><div class="text-lg font-bold">~2k</div><div class="text-xs opacity-60">node-hours</div></div>
+</div>
 
-::right::
-
-<div class="flex flex-col items-center justify-center h-full gap-1 pt-10">
-  <video
-    :src="'/assets/media/06_vorticity_z_midplane.webm'"
-    autoplay loop muted playsinline
-    class="rounded w-full"
-    style="max-height:320px; object-fit:contain"
-  />
-  <p class="text-xs opacity-50">Vorticity · z-midplane</p>
+<div class="grid grid-cols-3 gap-3 mt-4 text-center">
+  <div>
+    <video :src="'/assets/media/06_vorticity_z_midplane.webm'" autoplay loop muted playsinline class="rounded w-full" style="height:230px; object-fit:contain"></video>
+    <div class="text-xs opacity-60 mt-1">Vorticity · z-midplane</div>
+  </div>
+  <div>
+    <video :src="'/assets/media/03_velocity_mag_z_midplane.webm'" autoplay loop muted playsinline class="rounded w-full" style="height:230px; object-fit:contain"></video>
+    <div class="text-xs opacity-60 mt-1">Velocity magnitude · z-midplane</div>
+  </div>
+  <div>
+    <video :src="'/assets/media/01_q_criterion_z_midplane.webm'" autoplay loop muted playsinline class="rounded w-full" style="height:230px; object-fit:contain"></video>
+    <div class="text-xs opacity-60 mt-1">Q-criterion · z-midplane</div>
+  </div>
 </div>

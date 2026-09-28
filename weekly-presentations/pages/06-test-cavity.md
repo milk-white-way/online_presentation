@@ -1,5 +1,6 @@
 ---
 layout: default
+hide: true
 ---
 
 # Test Case 2: Lid-Driven Cavity
@@ -25,37 +26,40 @@ For the **3D extension**, the depth $L_y = \Gamma \cdot L_x$ introduces end-wall
 layout: default
 ---
 
-# Lid-Driven Cavity: $Re = 100$
+# Test Case 2: 2D Lid-Driven Cavity
 
-<div style="margin-top:0.75rem">
-  <img :src="'/assets/images/lid2d-ren100.png'" style="width:100%; max-height:400px; object-fit:contain" alt="Velocity profiles Re=100 vs Ghia et al." />
-  <div class="text-xs text-center opacity-60 mt-1">Grid 128 &times; 128 &nbsp;&bull;&nbsp; velocity profiles vs. Ghia et al. (1982)</div>
+<p class="text-sm opacity-75 !mt-1 !mb-2">Canonical benchmark: the lid translates at <em>U</em> = 1, no-slip on all other walls. Steady centerline profiles vs. Ghia et al. (1982).</p>
+
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.75rem; margin-top:0.25rem;">
+  <div class="text-center">
+    <div class="text-sm font-semibold mb-1"><em>Re</em> = 100</div>
+    <img :src="'/assets/images/ldc2d-A.png'" class="rounded bg-white w-full" alt="Centerline profiles, Re = 100" />
+  </div>
+  <div class="text-center">
+    <div class="text-sm font-semibold mb-1"><em>Re</em> = 400</div>
+    <img :src="'/assets/images/ldc2d-B.png'" class="rounded bg-white w-full" alt="Centerline profiles, Re = 400" />
+  </div>
+  <div class="text-center">
+    <div class="text-sm font-semibold mb-1"><em>Re</em> = 3,200</div>
+    <img :src="'/assets/images/ldc2d-C.png'" class="rounded bg-white w-full" alt="Centerline profiles, Re = 3200" />
+  </div>
+  <div class="text-center">
+    <div class="text-sm font-semibold mb-1"><em>Re</em> = 10,000</div>
+    <img :src="'/assets/images/ldc2d-D.png'" class="rounded bg-white w-full" alt="Centerline profiles, Re = 10000" />
+  </div>
+</div>
+
+<div class="flex justify-center mt-2">
+  <img :src="'/assets/images/ldc2d-legend.png'" class="rounded bg-white" style="max-height:34px" alt="Legend" />
+</div>
+
+<div class="text-xs text-center opacity-60 mt-2">
+  <em>u</em>(0.5, <em>y</em>) and <em>v</em>(<em>x</em>, 0.5) · solid: 128 × 128 · dash-dot: 256 × 256, which resolves the thin wall layers at high <em>Re</em>
 </div>
 
 ---
 layout: default
----
-
-# Lid-Driven Cavity: $Re = 400$
-
-<div style="margin-top:0.75rem">
-  <img :src="'/assets/images/lid2d-ren400.png'" style="width:100%; max-height:400px; object-fit:contain" alt="Velocity profiles Re=400 vs Ghia et al." />
-  <div class="text-xs text-center opacity-60 mt-1">Grid 128 &times; 128 &nbsp;&bull;&nbsp; velocity profiles vs. Ghia et al. (1982)</div>
-</div>
-
----
-layout: default
----
-
-# Lid-Driven Cavity: $Re = 1000$
-
-<div style="margin-top:0.75rem">
-  <img :src="'/assets/images/lid2d-ren1000.png'" style="width:100%; max-height:400px; object-fit:contain" alt="Velocity profiles Re=1000 vs Ghia et al." />
-  <div class="text-xs text-center opacity-60 mt-1">Grid 128 &times; 128 &nbsp;&bull;&nbsp; velocity profiles vs. Ghia et al. (1982)</div>
-</div>
-
----
-layout: default
+hide: true
 ---
 
 # Streamlines: Reynolds Number Comparison
@@ -83,6 +87,7 @@ layout: default
 
 ---
 layout: default
+hide: true
 ---
 
 # 3D Lid-Driven Cavity: $\Gamma = 2$, $Re = 100$
@@ -102,6 +107,7 @@ layout: default
 
 ---
 layout: default
+hide: true
 ---
 
 # 3D Lid-Driven Cavity: $\Gamma = 2$, $Re = 1000$
