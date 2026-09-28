@@ -1,5 +1,6 @@
 ---
 layout: default
+hide: true
 ---
 
 # Build on Strong Foundations

@@ -22,6 +22,16 @@ $$
 \end{align*}
 $$
 
+<div class="mt-4 rounded-lg px-3 py-2 border border-primary/30 text-xs">
+  <div class="flex items-center gap-3 mb-1">
+    <span class="rounded bg-white px-1.5 py-1 inline-flex"><img :src="'/assets/images/AMReX.png'" style="height:18px" alt="AMReX" /></span>
+    <span class="text-sm font-semibold whitespace-nowrap">Built on AMReX</span>
+    <span class="opacity-60 whitespace-nowrap">LBNL · Exascale Computing Project</span>
+  </div>
+  <div class="opacity-80 leading-relaxed">Block-structured adaptive mesh refinement · cell- and face-centered data · portable and scalable on CPUs and GPUs · interfaces to HYPRE and PETSc · output for yt, Amrvis, ParaView, VisIt</div>
+  <div class="opacity-50 mt-1">W. Zhang et al., <em>J. Open Source Softw.</em> 4(37):1370, 2019</div>
+</div>
+
 </div>
 
 ::right::
