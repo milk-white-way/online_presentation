@@ -15,9 +15,12 @@ colorSchema: dark
   <div class="flex-1 flex flex-col justify-center">
     <div class="w-14 h-1 bg-primary mb-6"></div>
     <div class="text-sm tracking-widest uppercase font-semibold mb-3" style="color:#F5A800; opacity:0.75">Part 2</div>
-    <h1 class="text-3xl font-bold leading-snug mb-7" style="color:#F5A800">
-      Modal analysis of blood flows in saccular aneurysms
+    <h1 class="text-3xl font-bold leading-snug mb-3" style="color:#F5A800">
+      Learning from High-Fidelity CFD: <br>
+      Unsupervised Stratification of <br>
+      Intracranial Aneurysm Patients
     </h1>
+    <p class="text-sm opacity-70 mb-7">Based on <em>Modal analysis of blood flows in saccular aneurysms</em>, Phys. Fluids 37, 011906 (2025) · Editor's Pick</p>
     <div class="space-y-2 text-sm">
       <div>
         <p class="font-semibold">Thien-Tam Nguyen &amp; Dr. Trung B. Le</p>

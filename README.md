@@ -1,8 +1,20 @@
-# weekly-presentations
+# From Exascale CFD to Data-Driven Hemodynamics
 
-Slidev-based presentation project. Slides are written in Markdown, served as a web app, and deployed automatically on every push.
+A 15-minute general presentation (2026) of the doctoral research of **Thien-Tam Nguyen** (Ph.D. Civil Engineering, North Dakota State University; advisor Dr. Trung B. Le), prepared for a scientific audience with a background in computational physics and fluid mechanics. The deck follows a *simulate → learn* arc:
 
-## Setup
+- **Opening:** career timeline and the motivation of simulating blood flow across scales.
+- **Part 1 · Simulate:** *OvrFlw* (formerly AMRESSIF), an AMReX-based incompressible Navier–Stokes solver for exascale systems, including its numerical method, verification and validation (Taylor–Green vortex, lid-driven cavity vs. Ghia et al.), scaling on ALCF Aurora, and a $1024^3$, $Re = 30{,}000$ production run.
+- **Part 2 · Learn:** unsupervised learning (Hankel Dynamic Mode Decomposition) on high-fidelity CFD of six patient-specific intracranial aneurysms, stratifying patients into *laminarized* vs. *transient* flows at clinical resolutions. Based on Nguyen et al., *Modal analysis of blood flows in saccular aneurysms*, Phys. Fluids 37, 011906 (2025).
+
+The slides live in [`weekly-presentations/`](weekly-presentations/) and are built with [Slidev](https://sli.dev).
+
+---
+
+## Using this NDSU template written in Slidev
+
+If you want to use this NDSU template written in Slidev, see the instructions below. Slides are written in Markdown, served as a web app, and deployed automatically on every push.
+
+### Setup
 
 Requires [Node.js](https://nodejs.org) (v20+) and [pnpm](https://pnpm.io).
 
@@ -21,14 +33,15 @@ pnpm export   # exports to PDF (requires Playwright)
 
 ---
 
-## Project structure
+### Project structure
 
 ```
 slides.md                   Global config + ordered list of src: references (index only)
 pages/                      One file per section — these are the actual slides
-  00-opening.md             Permanent blank opening slide (NDSU background)
-  00-title.md               Title slide
-  01-intro.md               Motivations + roadmap
+  00a-cv.md                 Presenter CV (career timeline)
+  00b-motivation.md         Motivation slide
+  00c-part1-title.md        Part title slide (NDSU green title design)
+  01-intro.md               Goal + roadmap
   ...
 templates/                  Copy-paste starting points — never imported by slides.md
   00-opening.md
@@ -51,7 +64,7 @@ public/
 
 ---
 
-## Adding a new slide section
+### Adding a new slide section
 
 1. Pick the closest template from `templates/` and copy it to `pages/`:
    ```bash
@@ -69,9 +82,11 @@ public/
 
 Numbering is manual — to insert between existing slides, rename the files to keep them in order.
 
+To turn a slide off without deleting it, add `hide: true` to its frontmatter.
+
 ---
 
-## Working with images and figures
+### Working with images and figures
 
 Place figures in `public/assets/figures/`. Reference them in slides using `:src` (not `src`):
 
@@ -87,7 +102,7 @@ image: /assets/figures/cavity-re3200.png
 > Plain `src="/path"` triggers Vite's module resolver and throws an error.
 > Frontmatter fields (`background:`, `image:`) are exempt — use plain strings there.
 
-### Replacing placeholder images
+#### Replacing placeholder images
 
 Every result slide has a `<!-- replace ... -->` comment marking the placeholder image.
 Search for it to find all slides still using backgrounds as stand-ins:
@@ -98,7 +113,7 @@ grep -r "replace" pages/
 
 ---
 
-## Working with animations
+### Working with animations
 
 Use **WebM** for video animations (CFD simulations, particle traces):
 
@@ -120,7 +135,7 @@ Avoid GIF for scientific content — the 256-color limit destroys scientific col
 
 ---
 
-## Working with logos
+### Working with logos
 
 Logos live in `public/assets/logos/`. All logos should be PNG with transparent backgrounds.
 To strip a white background using ImageMagick:
@@ -139,7 +154,7 @@ For slides with variable backgrounds (light or dark), use `dark:brightness-0 dar
 
 ---
 
-## Deployment
+### Deployment
 
 The project is connected to your choice of hosting service. 
 Every push to `main` triggers a new build automatically — no manual steps needed. 

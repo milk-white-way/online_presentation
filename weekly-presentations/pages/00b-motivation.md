@@ -33,6 +33,6 @@ layout: default
 </div>
 
 <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
-  <div><span class="font-semibold text-primary">Part 1 · OvrFlw:</span> <span class="opacity-75">an exascale-ready flow solver to meet the computational demand</span></div>
-  <div><span class="font-semibold text-primary">Part 2 · Aneurysms:</span> <span class="opacity-75">extracting hemodynamic insight from transient, patient-specific flows</span></div>
+  <div><span class="font-semibold text-primary">Part 1 · Simulate:</span> <span class="opacity-75">OvrFlw, a verified and validated exascale-ready CFD solver for high-fidelity flow data</span></div>
+  <div><span class="font-semibold text-primary">Part 2 · Learn:</span> <span class="opacity-75">unsupervised learning (DMD) on high-fidelity CFD to stratify aneurysm patients</span></div>
 </div>

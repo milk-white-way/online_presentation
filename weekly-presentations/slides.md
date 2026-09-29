@@ -1,9 +1,10 @@
 ---
 theme: seriph
-title: "Introducing OvrFlw: an AMReX-Based Solver for Exa-Scale Simulation of Incompressible Flows"
+title: "From Exascale CFD to Data-Driven Hemodynamics"
 info: |
-  General Presentation — 2026
-  Thien-Tam Nguyen & Dr. Trung B. Le (NDSU), Dr. Andy Nonaka (LBNL)
+  General Presentation — 2026 · Thien-Tam Nguyen (NDSU)
+  Part 1: OvrFlw, an AMReX-based solver for exascale simulation of incompressible flows
+  Part 2: Unsupervised learning on high-fidelity CFD for aneurysm patient stratification
 transition: slide-left
 drawings:
   persist: false

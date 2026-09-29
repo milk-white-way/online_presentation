@@ -18,7 +18,7 @@ hide: true
 layout: default
 ---
 
-# Patient-specific Cohort &amp; Modal Analysis
+# From High-Fidelity CFD to Unsupervised Learning
 
 <div style="display:grid; grid-template-columns:auto auto 1fr; gap:1.25rem; margin-top:0.5rem; align-items:start;">
   <div class="text-center">
@@ -39,14 +39,15 @@ layout: default
       <div class="opacity-75">72 bpm waveform with harmonics at 1.2, 2.4, 3.6 Hz; <em>Re</em> ≈ 550, <em>α</em> ≈ 3; 4 cycles × 4,000 steps</div>
     </div>
     <div>
-      <div class="font-semibold text-sm">Question</div>
-      <div class="opacity-75">Can modal analysis characterize aneurysmal flow from data at <em>clinical</em> resolution (≈ 1 mm, ≈ 40 ms)?</div>
+      <div class="font-semibold text-sm">Questions</div>
+      <div class="opacity-75"><strong>1.</strong> Can an unsupervised method, trained on CFD data alone, stratify patients, and does it still work at <em>clinical</em> resolution (≈ 1 mm, ≈ 40 ms)?</div>
+      <div class="opacity-75 mt-1"><strong>2.</strong> Can it improve on current rupture-risk scores (PHASES, ELAPSS: &lt; 20% predictive accuracy) and help clinicians weigh treatment (clipping, coiling, flow diversion) against its risks?</div>
     </div>
   </div>
 </div>
 
 <div class="mt-3 rounded-lg px-3 py-2 text-xs border border-primary/30">
-  <span class="font-semibold text-sm">Hankel DMD</span>&nbsp; decomposes the sac flow into 3D spatial modes, frequency pseudo-spectra, and cumulative-energy (CE) curves ·
+  <span class="font-semibold text-sm">Unsupervised learning · Hankel DMD</span>&nbsp; equation-free and label-free: decomposes the sac flow into 3D spatial modes, frequency pseudo-spectra, and cumulative-energy (CE) curves ·
   <span class="font-semibold">72 datasets</span> = 6 patients × 4 spatial (0.12 → ≈ 1 mm) × 3 temporal (Δτ = 16.8 → 4.2 ms) resolutions
 </div>
 
@@ -93,7 +94,7 @@ $$
 layout: default
 ---
 
-# Inflow Jet &amp; Dominant Modes
+# What DMD Learns: Dominant Modes
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:0.25rem;">
   <div class="text-center">
@@ -108,7 +109,7 @@ layout: default
 
 <v-clicks>
 
-- The dominant modes recover the **inflow waveform harmonics** (1.2, 2.4, 3.6 Hz) and trace the inflow jet
+- Learned from the flow data alone, the leading modes recover the **inflow waveform harmonics** (1.2, 2.4, 3.6 Hz) and isolate the inflow jet
 - Jet type (diffused vs. concentrated), impingement site, and vortex rotation follow the **inflow angle**, not aneurysm size
 
 </v-clicks>
@@ -117,7 +118,7 @@ layout: default
 layout: default
 ---
 
-# High-Frequency Fluctuations
+# What DMD Discovers: High-Frequency Instabilities
 
 <div style="display:grid; grid-template-columns:3fr 2fr; gap:1.5rem; margin-top:0.5rem; align-items:center;">
   <div class="text-center">
@@ -142,7 +143,7 @@ layout: default
 layout: default
 ---
 
-# Stratification &amp; Robustness
+# Unsupervised Patient Stratification
 
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:0.25rem;">
   <div>
@@ -157,12 +158,12 @@ layout: default
         <div class="opacity-75">P2, P4, P5, P6 · slope ≈ 0.20</div>
       </div>
     </div>
-    <div class="text-xs opacity-70 mt-2">≈ 10% energy gap at 20% of the modes, consistent for every temporal resolution <em>M</em></div>
+    <div class="text-xs opacity-70 mt-2">No labels: the two groups emerge from the CE decay rate alone · ≈ 10% energy gap at 20% of the modes, consistent for every temporal resolution <em>M</em></div>
   </div>
   <div>
     <img :src="'/assets/images/aneurysm/fig9.png'" style="height:270px; width:100%; object-fit:contain" alt="CE curves across spatial resolutions for Patients 1 and 6" />
     <div class="rounded p-2 mt-2 text-xs bg-green-500/10 border border-green-500/30">
-      <div class="font-semibold text-green-500">Robust to coarsening</div>
+      <div class="font-semibold text-green-500">Transfers to clinical resolution</div>
       <div class="opacity-75">CE curves differ by &lt; 1.5% from CFD resolution (1X) down to 16X, i.e., coarser than 1 mm, comparable to 4D-flow MRI</div>
     </div>
   </div>
@@ -172,19 +173,19 @@ layout: default
 layout: default
 ---
 
-# Takeaways: Aneurysm Hemodynamics
+# Takeaways: CFD + Unsupervised Learning
 
 <v-clicks>
 
-- **Patient-specific flow:** DMD reveals unique 3D flow structures in each patient, independent of aneurysm size or aspect ratio.
-- **Robust at low resolution:** pseudo-spectra and CE curves characterize the flow even at clinical spatial and temporal resolutions.
-- **Toward risk assessment:** the CE slope stratifies patients into *laminarized* vs. *transient* flows, a new quantitative marker for aneurysm severity.
+- **High-fidelity CFD as ground truth:** noise-free flow fields (≈ 0.1 mm) far finer than clinical CT or MRI.
+- **Unsupervised discovery:** DMD recovers the forcing harmonics and locates high-frequency instabilities at jet impingement, independent of aneurysm size or aspect ratio.
+- **Patient stratification:** the CE slope separates *laminarized* from *transient* flows and holds down to clinical resolution, a candidate quantitative marker for rupture-risk assessment.
 
 </v-clicks>
 
 <div v-click class="mt-8 rounded-lg p-4 bg-primary/5 border border-primary/30 text-sm">
-  <span class="font-semibold">The computational bottleneck:</span>&nbsp;
-  <span class="opacity-80">every patient needs ≈ 12 M grid points × 16,000 time steps. Scaling to large cohorts and down to cellular scales requires an exascale-ready flow solver such as OvrFlw.</span>
+  <span class="font-semibold">Closing the loop:</span>&nbsp;
+  <span class="opacity-80">the bottleneck is data generation, at ≈ 12 M grid points × 16,000 time steps per patient. A validated exascale solver such as OvrFlw makes cohort-scale, high-fidelity training data feasible.</span>
 </div>
 
 <div class="abs-bl m-4 text-xs opacity-50 leading-relaxed">
